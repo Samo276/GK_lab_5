@@ -1,4 +1,4 @@
-package GK_lab_5_zad_2;
+
 
 import java.awt.*;
 import javax.swing.*;

@@ -117,27 +117,27 @@ public class Lab5 extends GLJPanel implements GLEventListener, KeyListener{
 		// range -5 to 5.)
 		
 		
-		int promien = 2;
-		int il_katow = 9;
+		int promien = 1;
+		int il_katow = 40; //9
 		float wysokosc_spirali = 0f;
-		float wys= 0.3f;
+		float wys= 0.01f; //0.3f
+		int loop_length = 300;
 		
 		
-		
-			for(int i = 0 ; i<=18 ;i++) {
+			for(int i = 0 ; i<=loop_length ;i++) { //18
 				gl2.glPointSize(wys);
 				gl2.glBegin (gl2.GL_POINTS);
 				
-				if(i<=6)
+				if(i<=loop_length/3)
 					gl2.glColor3f (1,0,0);
-				if(i<=12 && i>5)
+				if(i>=loop_length/3 && i<loop_length/3*2)
 					gl2.glColor3f (0,1,0);
-				if(i>12)
+				if(i>=loop_length/3*2)
 					gl2.glColor3f (0.5f, 0.35f, 0.05f);
 				
 				gl2.glVertex3f((float)(promien*Math.cos(2*i*Math.PI /il_katow))*wysokosc_spirali, (float)(promien*Math.sin(2*i*Math.PI /il_katow))*wysokosc_spirali,-(float)wys);
-				wysokosc_spirali +=0.2f;
-				wys+=0.4f;
+				wysokosc_spirali +=0.01f; //0.2f
+				wys+=0.02f; //0.4f
 				gl2.glEnd ();
 				
 			}
